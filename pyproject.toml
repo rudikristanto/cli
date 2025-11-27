@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "taskflow"
+version = "1.0.0"
+description = "A beautiful async CLI task runner with progress tracking"
+authors = ["Developer <dev@example.com>"]
+readme = "README.md"
+packages = [{include = "taskflow", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+typer = {extras = ["all"], version = "^0.15.1"}
+rich = "^13.9.4"
+anyio = "^4.7.0"
+
+[tool.poetry.scripts]
+taskflow = "taskflow.cli:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
