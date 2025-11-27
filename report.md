@@ -1,6 +1,6 @@
 # TaskFlow Execution Report
 
-**Generated:** 2025-11-27 15:01:09
+**Generated:** 2025-11-27 16:48:15
 **Version:** 1.0.0
 
 ---
@@ -9,10 +9,10 @@
 
 | Parameter | Value |
 |-----------|-------|
-| Outer Iterations | 5 |
-| Middle Iterations | 3 |
-| Inner Iterations (max) | 10 |
-| Short Circuit Probability | 30.0% |
+| Outer Iterations | 2 |
+| Middle Iterations | 2 |
+| Inner Iterations (max) | 3 |
+| Short Circuit Probability | 0.0% |
 
 ---
 
@@ -20,11 +20,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total Outer Iterations | 5 |
-| Total Middle Iterations | 15 |
-| Total Inner Iterations | 39 |
-| Short Circuit Events | 15 |
-| Total Elapsed Time | 00:00:01 (1.87s) |
+| Total Outer Iterations | 2 |
+| Total Middle Iterations | 4 |
+| Total Inner Iterations | 12 |
+| Short Circuit Events | 0 |
+| Total Elapsed Time | 00:00:00 (0.53s) |
 
 ---
 
@@ -32,15 +32,15 @@
 
 ### Iteration Efficiency
 
-- **Expected Inner Iterations:** 150
-- **Actual Inner Iterations:** 39
-- **Efficiency:** 26.0%
+- **Expected Inner Iterations:** 12
+- **Actual Inner Iterations:** 12
+- **Efficiency:** 100.0%
 
 ### Short Circuit Rate
 
-- **Total Possible Short Circuits:** 15
-- **Actual Short Circuits:** 15
-- **Short Circuit Rate:** 100.0%
+- **Total Possible Short Circuits:** 4
+- **Actual Short Circuits:** 0
+- **Short Circuit Rate:** 0.0%
 
 ---
 
@@ -48,30 +48,12 @@
 
 ```
 TaskFlow execution initialized
-Configuration: outer=5, middle=3, inner=10
-Execution started at 2025-11-27 15:01:07
+Configuration: outer=2, middle=2, inner=3
+Execution started at 2025-11-27 16:48:14
 Outer iteration 1 started
-Short-circuit at outer=0, middle=0, inner=1
-Short-circuit at outer=0, middle=1, inner=1
-Short-circuit at outer=0, middle=2, inner=5
 Outer iteration 2 started
-Short-circuit at outer=1, middle=0, inner=1
-Short-circuit at outer=1, middle=1, inner=1
-Short-circuit at outer=1, middle=2, inner=3
-Outer iteration 3 started
-Short-circuit at outer=2, middle=0, inner=2
-Short-circuit at outer=2, middle=1, inner=4
-Short-circuit at outer=2, middle=2, inner=2
-Outer iteration 4 started
-Short-circuit at outer=3, middle=0, inner=3
-Short-circuit at outer=3, middle=1, inner=3
-Short-circuit at outer=3, middle=2, inner=4
-Outer iteration 5 started
-Short-circuit at outer=4, middle=0, inner=1
-Short-circuit at outer=4, middle=1, inner=4
-Short-circuit at outer=4, middle=2, inner=4
-Execution completed at 2025-11-27 15:01:09
-Total elapsed time: 1.87 seconds
+Execution completed at 2025-11-27 16:48:15
+Total elapsed time: 0.53 seconds
 ```
 
 ---

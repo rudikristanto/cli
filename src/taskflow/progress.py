@@ -2,8 +2,9 @@
 
 from dataclasses import dataclass, field
 from time import perf_counter
+from typing import TYPE_CHECKING
 
-from rich.console import Console, Group
+from rich.console import Console, ConsoleOptions, Group, RenderResult
 from rich.live import Live
 from rich.panel import Panel
 from rich.progress import (
@@ -15,6 +16,23 @@ from rich.progress import (
     TimeElapsedColumn,
 )
 from rich.table import Table
+
+if TYPE_CHECKING:
+    from rich.console import Console as ConsoleType
+
+
+class DynamicLayout:
+    """Wrapper that recalculates elapsed times on each render."""
+
+    def __init__(self, progress_manager: "ProgressManager") -> None:
+        self._progress_manager = progress_manager
+
+    def __rich_console__(
+        self, console: "ConsoleType", options: ConsoleOptions
+    ) -> RenderResult:
+        """Render the layout with updated elapsed times."""
+        self._progress_manager._refresh_time_displays()
+        yield self._progress_manager._create_layout()
 
 
 def format_time(seconds: float) -> str:
@@ -71,6 +89,21 @@ class ProgressManager:
             expand=False,
         )
 
+    def _refresh_time_displays(self) -> None:
+        """Refresh the elapsed time displays for both progress bars."""
+        if self._outer_start_time > 0:
+            outer_elapsed = perf_counter() - self._outer_start_time
+            self._outer_progress.update(
+                self._outer_task,
+                time_display=format_time(outer_elapsed),
+            )
+        if self._inner_start_time > 0:
+            inner_elapsed = perf_counter() - self._inner_start_time
+            self._inner_progress.update(
+                self._inner_task,
+                time_display=format_time(inner_elapsed),
+            )
+
     def _create_layout(self) -> Panel:
         """Create the combined layout with progress bars and messages."""
         progress_table = Table.grid(expand=True)
@@ -124,8 +157,9 @@ class ProgressManager:
         self._outer_start_time = perf_counter()
         self._inner_start_time = perf_counter()
 
+        # Use DynamicLayout to ensure elapsed times update on each render cycle
         self._live = Live(
-            self._create_layout(),
+            DynamicLayout(self),
             console=self.console,
             refresh_per_second=10,
             transient=False,
@@ -204,8 +238,13 @@ class ProgressManager:
         self._update_display()
 
     def _update_display(self) -> None:
-        """Update the live display."""
-        self._live.update(self._create_layout())
+        """Update the live display.
+
+        Note: With DynamicLayout, the display auto-refreshes 10 times per second,
+        so this method is now a no-op. Updates to progress/messages will be
+        picked up on the next render cycle.
+        """
+        pass
 
     def get_outer_elapsed(self) -> float:
         """Get elapsed time for outer loop."""
