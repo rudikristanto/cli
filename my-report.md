@@ -1,6 +1,6 @@
 # TaskFlow Execution Report
 
-**Generated:** 2025-11-27 16:55:54
+**Generated:** 2025-11-28 08:29:29
 **Version:** 1.0.0
 
 ---
@@ -22,9 +22,9 @@
 |--------|-------|
 | Total Outer Iterations | 10 |
 | Total Middle Iterations | 50 |
-| Total Inner Iterations | 193 |
+| Total Inner Iterations | 167 |
 | Short Circuit Events | 50 |
-| Total Elapsed Time | 00:03:27 (207.07s) |
+| Total Elapsed Time | 00:00:07 (7.62s) |
 
 ---
 
@@ -33,8 +33,8 @@
 ### Iteration Efficiency
 
 - **Expected Inner Iterations:** 750
-- **Actual Inner Iterations:** 193
-- **Efficiency:** 25.7%
+- **Actual Inner Iterations:** 167
+- **Efficiency:** 22.3%
 
 ### Short Circuit Rate
 
@@ -49,69 +49,69 @@
 ```
 TaskFlow execution initialized
 Configuration: outer=10, middle=5, inner=15
-Execution started at 2025-11-27 16:52:27
+Execution started at 2025-11-28 08:29:22
 Outer iteration 1 started
-Short-circuit at outer=0, middle=0, inner=3
-Short-circuit at outer=0, middle=1, inner=5
-Short-circuit at outer=0, middle=2, inner=8
-Short-circuit at outer=0, middle=3, inner=1
-Short-circuit at outer=0, middle=4, inner=7
+Short-circuit at outer=0, middle=0, inner=1
+Short-circuit at outer=0, middle=1, inner=2
+Short-circuit at outer=0, middle=2, inner=4
+Short-circuit at outer=0, middle=3, inner=7
+Short-circuit at outer=0, middle=4, inner=2
 Outer iteration 2 started
-Short-circuit at outer=1, middle=0, inner=5
-Short-circuit at outer=1, middle=1, inner=6
-Short-circuit at outer=1, middle=2, inner=8
-Short-circuit at outer=1, middle=3, inner=1
-Short-circuit at outer=1, middle=4, inner=12
+Short-circuit at outer=1, middle=0, inner=2
+Short-circuit at outer=1, middle=1, inner=2
+Short-circuit at outer=1, middle=2, inner=1
+Short-circuit at outer=1, middle=3, inner=5
+Short-circuit at outer=1, middle=4, inner=3
 Outer iteration 3 started
-Short-circuit at outer=2, middle=0, inner=5
-Short-circuit at outer=2, middle=1, inner=2
-Short-circuit at outer=2, middle=2, inner=11
-Short-circuit at outer=2, middle=3, inner=4
-Short-circuit at outer=2, middle=4, inner=2
+Short-circuit at outer=2, middle=0, inner=4
+Short-circuit at outer=2, middle=1, inner=3
+Short-circuit at outer=2, middle=2, inner=1
+Short-circuit at outer=2, middle=3, inner=2
+Short-circuit at outer=2, middle=4, inner=3
 Outer iteration 4 started
-Short-circuit at outer=3, middle=0, inner=3
-Short-circuit at outer=3, middle=1, inner=2
-Short-circuit at outer=3, middle=2, inner=1
+Short-circuit at outer=3, middle=0, inner=8
+Short-circuit at outer=3, middle=1, inner=8
+Short-circuit at outer=3, middle=2, inner=2
 Short-circuit at outer=3, middle=3, inner=3
-Short-circuit at outer=3, middle=4, inner=3
+Short-circuit at outer=3, middle=4, inner=1
 Outer iteration 5 started
-Short-circuit at outer=4, middle=0, inner=8
+Short-circuit at outer=4, middle=0, inner=2
 Short-circuit at outer=4, middle=1, inner=1
 Short-circuit at outer=4, middle=2, inner=1
-Short-circuit at outer=4, middle=3, inner=2
-Short-circuit at outer=4, middle=4, inner=2
+Short-circuit at outer=4, middle=3, inner=7
+Short-circuit at outer=4, middle=4, inner=1
 Outer iteration 6 started
-Short-circuit at outer=5, middle=0, inner=9
-Short-circuit at outer=5, middle=1, inner=2
-Short-circuit at outer=5, middle=2, inner=2
-Short-circuit at outer=5, middle=3, inner=2
-Short-circuit at outer=5, middle=4, inner=3
+Short-circuit at outer=5, middle=0, inner=5
+Short-circuit at outer=5, middle=1, inner=5
+Short-circuit at outer=5, middle=2, inner=1
+Short-circuit at outer=5, middle=3, inner=5
+Short-circuit at outer=5, middle=4, inner=6
 Outer iteration 7 started
 Short-circuit at outer=6, middle=0, inner=1
-Short-circuit at outer=6, middle=1, inner=6
+Short-circuit at outer=6, middle=1, inner=3
 Short-circuit at outer=6, middle=2, inner=4
 Short-circuit at outer=6, middle=3, inner=6
-Short-circuit at outer=6, middle=4, inner=2
+Short-circuit at outer=6, middle=4, inner=1
 Outer iteration 8 started
-Short-circuit at outer=7, middle=0, inner=4
-Short-circuit at outer=7, middle=1, inner=3
-Short-circuit at outer=7, middle=2, inner=5
-Short-circuit at outer=7, middle=3, inner=6
-Short-circuit at outer=7, middle=4, inner=3
+Short-circuit at outer=7, middle=0, inner=2
+Short-circuit at outer=7, middle=1, inner=13
+Short-circuit at outer=7, middle=2, inner=2
+Short-circuit at outer=7, middle=3, inner=7
+Short-circuit at outer=7, middle=4, inner=2
 Outer iteration 9 started
-Short-circuit at outer=8, middle=0, inner=3
+Short-circuit at outer=8, middle=0, inner=2
 Short-circuit at outer=8, middle=1, inner=1
 Short-circuit at outer=8, middle=2, inner=3
-Short-circuit at outer=8, middle=3, inner=6
-Short-circuit at outer=8, middle=4, inner=6
+Short-circuit at outer=8, middle=3, inner=4
+Short-circuit at outer=8, middle=4, inner=1
 Outer iteration 10 started
-Short-circuit at outer=9, middle=0, inner=2
-Short-circuit at outer=9, middle=1, inner=2
-Short-circuit at outer=9, middle=2, inner=2
-Short-circuit at outer=9, middle=3, inner=3
+Short-circuit at outer=9, middle=0, inner=1
+Short-circuit at outer=9, middle=1, inner=3
+Short-circuit at outer=9, middle=2, inner=8
+Short-circuit at outer=9, middle=3, inner=4
 Short-circuit at outer=9, middle=4, inner=1
-Execution completed at 2025-11-27 16:55:54
-Total elapsed time: 207.07 seconds
+Execution completed at 2025-11-28 08:29:29
+Total elapsed time: 7.62 seconds
 ```
 
 ---

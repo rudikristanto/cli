@@ -111,7 +111,7 @@ class ProgressManager:
         progress_table.add_row(self._inner_progress)
 
         message_table = Table.grid(expand=True)
-        recent_messages = self._messages[-5:] if self._messages else ["Waiting for tasks..."]
+        recent_messages = self._messages[-10:] if self._messages else ["Waiting for tasks..."]
         for msg in recent_messages:
             message_table.add_row(f"  [dim]>[/dim] {msg}")
 
